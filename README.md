@@ -43,7 +43,6 @@ If you are managing your project workspace inside a Python virtual environment t
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-<<<<<<< HEAD
 Linux/macOS:
 
 Bash
@@ -104,4 +103,3 @@ Note: If you experience a blank layout initialization stall, ensure your browser
 📸 Interface Preview
 Once the dual-stack architecture stabilizes, the GHOST cryptographic terminal will fully initialize:
 =======
->>>>>>> 911363754c4496ec3160d2da2a761d0a11a919b6
