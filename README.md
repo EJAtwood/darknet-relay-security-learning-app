@@ -26,6 +26,15 @@ Unlike static quiz apps, this platform leverages live AI telemetry to engineer t
 
 ---
 
+## 📝 Project Description
+
+<div align="center">
+  <img src="docs/Darknet Relay Mesh Node Landing Page.png" alt="Darknet Relay Boot Sequence" width="45%"/>
+  <img src="docs/Darknet Relay Node 1.png" alt="Active Terminal Interface" width="45%"/>
+</div>
+
+---
+
 ## 🚀 Getting Started & Local Installation
 
 Follow these steps to isolate your environment, configure your secure API proxy, and spin up the GHOST terminal mesh interface locally.
@@ -96,8 +105,3 @@ Note: If you experience a blank layout initialization stall, ensure your browser
 
 📸 Interface Preview
 Once the dual-stack architecture stabilizes, the GHOST cryptographic terminal will fully initialize:
-
-<div align="center">
-  <img src="docs/Darknet Relay Mesh Node Landing Page.png" alt="Darknet Relay Boot Sequence" width="400"/>
-  <img src="docs/Darknet Relay Node 1.png" alt="Active Terminal Interface" width="400"/>
-</div>
