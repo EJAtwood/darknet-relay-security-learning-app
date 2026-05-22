@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![React](https://img.shields.io/badge/Frontend-React-61dafb.svg?style=flat&logo=react)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js-339933.svg?style=flat&logo=node.js)](https://nodejs.org/)
-[![Anthropic](https://img.shields.io/badge/AI--Engine-Claude--3.5--Sonnet-orange.svg)](https://www.anthropic.com/)
+[![Anthropic](https://img.shields.io/badge/AI--Engine-Claude--Haiku-orange.svg?style=flat&logo=anthropic)](https://www.anthropic.com/claude/haiku)
 
 > **TRANSMISSION LOCKED... INITIALIZING MESH INTERFACE: darknet0 UP**
 > 
