@@ -1,4 +1,5 @@
 //import { useState, useEffect, useRef, useCallback } from "react";
+const { useState, useEffect, useRef, useCallback } = React;
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 const DOMAINS = [
