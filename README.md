@@ -43,11 +43,12 @@ If you are managing your project workspace inside a Python virtual environment t
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
-Linux/macOS:
 
+Linux/macOS:
 Bash
 python3 -m venv .venv
 source .venv/bin/activate
+
 2. Clone the Repository & Install Dependencies
 Clone down the source code and install the required core Node.js packages for both the backend proxy engine and the local static host.
 
