@@ -2,7 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![React](https://img.shields.io/badge/Frontend-React-61dafb.svg?style=flat&logo=react)](https://react.dev/)
-[![Anthropic](https://img.shields.io/badge/AI--Engine-Claude--Sonnet-orange.svg)](https://www.anthropic.com/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js-339933.svg?style=flat&logo=node.js)](https://nodejs.org/)
+[![Anthropic](https://img.shields.io/badge/AI--Engine-Claude--3.5--Sonnet-orange.svg)](https://www.anthropic.com/)
 
 > **TRANSMISSION LOCKED... INITIALIZING MESH INTERFACE: darknet0 UP**
 > 
@@ -18,13 +19,13 @@ The application features a unique **"Ghost in the Routing Table"** concept, simu
 
 ---
 
-## 🛠️ Dynamic AI Architecture
+## 🛠️ Dynamic AI Architecture & Proxy Security
 
-Unlike static quiz apps, this platform leverages live AI telemetry to engineer technically rigorous scenarios on the fly:
+Unlike static quiz apps, this platform leverages live AI telemetry to engineer technically rigorous scenarios on the fly. To ensure enterprise-grade security, the application utilizes a **split-process proxy architecture** that isolates sensitive credentials from the browser:
 
-* **The GHOST Engine:** Uses a dedicated system persona (`claude-sonnet-4-20250514`) acting as an in-character game master that generates unique, structured JSON challenge payloads.
+* **The GHOST Engine:** Uses a dedicated system persona (`claude-3-5-sonnet-latest`) acting as an in-character game master that generates unique, structured JSON challenge payloads.
+* **Secure Backend Relay:** Built with a Node.js/Express server that acts as a secure reverse-proxy. All API transactions with Anthropic are executed server-side, protecting the private API key from client-side exposure or browser-inspect manipulation.
 * **Adaptive Challenge Types:** Features dynamic generation for multiple-choice, fill-in-the-blank, scenario-based remediation, code review (spotting active vulnerabilities), and live command-line syntax verification.
-* **Targeted Learning Focus:** Advanced technical modules specifically biased toward **API Security**, **Cloud Infrastructure**, **Application Security (AppSec)**, and **AI Security** threat models.
 * **Signal Token Mechanics:** A built-in gamified economy where users spend limited "Signal Tokens" to intercept hints when stuck on complex nodes.
 
 ---
@@ -43,32 +44,11 @@ To escape the network, users must unlock and clear 14 distinct security domains 
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/) (v16 or higher)
-* An active [Anthropic API Key](https://console.anthropic.com/) (to power the GHOST challenge generation)
+* An active [Anthropic API Key](https://console.anthropic.com/)
 
-### Installation
+### Installation & Local Setup
 
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/EJAtwood/darknet-relay-security-learning-app.git](https://github.com/EJAtwood/darknet-relay-security-learning-app.git)
    cd darknet-relay-security-learning-app
-Install dependencies:
-
-Bash
-npm install
-Configure Environment Variables:
-Create a .env file in the root directory and add your API credentials:
-
-Code snippet
-VITE_ANTHROPIC_API_KEY=your_claude_api_key_here
-Launch the Development Server:
-
-Bash
-npm run dev
-Open your browser and navigate to http://localhost:5173 to jack into the mesh.
-
-🎛️ Project Structure
-Plaintext
-darknet-relay-security-learning-app/
-├── DarknetRelay.jsx     # Main React Engine (UI layout, state engine, & API integration)
-├── LICENSE              # MIT License open-source terms
-└── README.md            # System documentation
