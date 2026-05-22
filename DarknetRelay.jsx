@@ -407,6 +407,7 @@ function TypewriterText({ text, speed = 18, color = "var(--amber)" }) {
 // ─── API CALL ─────────────────────────────────────────────────────────────────
 async function callGhost(domain, difficulty, challengeType) {
   const domainLabel = DOMAINS.find(d => d.id === domain)?.label || domain;
+  
   const typeInstructions = {
     multiple_choice: "Generate a multiple_choice challenge with exactly 4 options (A, B, C, D). correct_answer must be the full text of the correct option.",
     fill_blank: "Generate a fill_blank challenge. question should have a [BLANK] placeholder. correct_answer is the exact string expected.",
@@ -415,39 +416,22 @@ async function callGhost(domain, difficulty, challengeType) {
     command: "Generate a command challenge. Ask the user to construct or complete a CLI command. correct_answer is the exact command or critical flag/value.",
   };
 
-  const prompt = `Generate a cybersecurity challenge for domain: ${domainLabel}. Difficulty: ${difficulty}. Challenge type: ${challengeType}.
-${typeInstructions[challengeType]}
-
-Respond ONLY with this exact JSON structure, no other text:
-{
-  "node_id": "NODE-XX :: LABEL_IN_CAPS",
-  "ghost_briefing": "2-3 sentences of cryptic in-character narrative framing. Use network/routing metaphors.",
-  "challenge_type": "${challengeType}",
-  "difficulty": "${difficulty}",
-  "question": "The full question or scenario text. For code_review, embed the code snippet directly in this field.",
-  "options": ["A. ...", "B. ...", "C. ...", "D. ..."],
-  "correct_answer": "exact answer string",
-  "hints": ["first hint - subtle", "second hint - more direct", "third hint - near giveaway"],
-  "explanation": "3-5 sentence technical explanation with real-world context. Be specific and educational.",
-  "ghost_reaction_pass": "Short cryptic congratulatory message in GHOST voice, 1-2 sentences.",
-  "ghost_reaction_fail": "Short cryptic but encouraging failure message in GHOST voice, 1-2 sentences."
-}`;
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  // Hit your proxy endpoint instead of Anthropic directly
+  const res = await fetch("http://localhost:5000/api/ghost", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1000,
-      system: GHOST_PERSONA,
-      messages: [{ role: "user", content: prompt }],
+      domainLabel,
+      difficulty,
+      challengeType,
+      typeInstructions: typeInstructions[challengeType]
     }),
   });
+
   if (!res.ok) throw new Error(`API ${res.status}`);
-  const data = await res.json();
-  const text = data.content?.find(b => b.type === "text")?.text || "";
-  const cleaned = text.replace(/```json|```/g, "").trim();
-  return JSON.parse(cleaned);
+  
+  // The server already parsed and cleaned the JSON object, so just return it
+  return await res.json();
 }
 
 // ─── MAIN APP ────────────────────────────────────────────────────────────────
