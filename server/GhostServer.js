@@ -21,8 +21,8 @@ app.post('/api/ghost', async (req, res) => {
 
   try {
     const msg = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-latest", // Upgraded to the stable latest alias
-      max_tokens: 1000,
+      model: "claude-haiku-4-5", // Upgraded to the stable latest alias
+      max_tokens: 1024,
       system: GHOST_PERSONA,
       messages: [{ role: "user", content: prompt }],
     });
